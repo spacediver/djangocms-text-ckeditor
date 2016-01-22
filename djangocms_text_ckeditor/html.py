@@ -52,6 +52,9 @@ def clean_html(data, full=True, parser=DEFAULT_PARSER):
     If full is False, only the contents inside <body> will be returned (without
     the <body> tags).
     """
+    return data
+
+    """
     if full:
         dom_tree = parser.parse(data)
     else:
@@ -61,6 +64,7 @@ def clean_html(data, full=True, parser=DEFAULT_PARSER):
     s = serializer.htmlserializer.HTMLSerializer(omit_optional_tags=False,
                                                  quote_attr_values=True)
     return u''.join(s.serialize(stream))
+    """
 
 
 def extract_images(data, plugin):
